@@ -10,7 +10,7 @@ class Model {
 
   constructor (koop = {}, options = {}) {
     this.#logger = koop.logger;
-    this.#dataDir = options.dataDir || koop.dataDir || process.env.DATA_DIR || './data';
+    this.#dataDir = options.dataDir || koop.dataDir || process.env.DATA_DIR || './data/geojson';
     this.#dataDirPath = path.join(process.cwd(), this.#dataDir);
     this.#ttl = options.ttl || 0;
     this.#verifyDataDirectoryExists(this.#dataDirPath);
@@ -49,7 +49,7 @@ class Model {
       throw new Error(`${loggingPrefix}data directory "${this.#dataDir}" not found.`);
     }
 
-    this.#logger.info(`${loggingPrefix}will read data from ${this.#dataDir}`);
+    //this.#logger.info(`${loggingPrefix}will read data from ${this.#dataDir}`);
   }
 }
 
